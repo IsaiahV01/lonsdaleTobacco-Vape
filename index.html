@@ -32,55 +32,63 @@
       background-size: cover;
       background-position: center;
     }
+/* === Smooth Infinite Brand Scroll === */
+.brand-scroll {
+  animation: scroll-left 30s linear infinite;
+}
 
-    .brand-scroll {
-      display: inline-block;
-      white-space: nowrap;
-      animation: scroll 40s linear infinite;
-    }
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 
-    /* === Custom Scrollbar Styling === */
     ::-webkit-scrollbar {
-      width: 10px;
-      height: 10px;
-    }
-    
-    ::-webkit-scrollbar-track {
-      background: #f1f1f1; /* Light gray background */
-      border-radius: 10px;
-    }
-    
-    ::-webkit-scrollbar-thumb {
-      background: #dc2626; /* Your primary red */
-      border-radius: 10px;
-      border: 2px solid #f1f1f1; /* Adds spacing */
-    }
-    
-    ::-webkit-scrollbar-thumb:hover {
-      background: #b91c1c; /* Darker red on hover */
-    }
-    
-    /* Firefox support */
-    * {
-      scrollbar-width: thin;
-      scrollbar-color: #dc2626 #f1f1f1;
-    }
-    body {
-      scrollbar-gutter: stable;
-    }
-    
-    ::-webkit-scrollbar {
-      transition: opacity 0.3s ease;
-    }
-    
-    body::-webkit-scrollbar-thumb {
-      opacity: 0.5;
-    }
-    
-    body:hover::-webkit-scrollbar-thumb {
-      opacity: 1;
-    }
-    
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Light gray background */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dc2626; /* Your primary red */
+  border-radius: 10px;
+  border: 2px solid #f1f1f1; /* Adds spacing */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b91c1c; /* Darker red on hover */
+}
+
+/* Firefox support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #dc2626 #f1f1f1;
+}
+body {
+  scrollbar-gutter: stable;
+}
+
+::-webkit-scrollbar {
+  transition: opacity 0.3s ease;
+}
+
+body::-webkit-scrollbar-thumb {
+  opacity: 0.5;
+}
+
+body:hover::-webkit-scrollbar-thumb {
+  opacity: 1;
+}
+
+
+
     @keyframes scroll {
       0% {
         transform: translateX(0);
@@ -141,27 +149,26 @@
   </section>
 
   <!-- Featured Brands -->
-  <section class="py-12 bg-white overflow-hidden">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <h2 class="text-2xl font-bold mb-8 text-primary">Featured Brands</h2>
-      <div class="relative overflow-hidden">
-        <div class="brand-scroll">
-          <div class="inline-flex items-center space-x-12">
-            <img src="http://static.photos/technology/200x200/1" alt="Brand 1" class="h-16 object-contain" />
-            <img src="http://static.photos/technology/200x200/2" alt="Brand 2" class="h-16 object-contain" />
-            <img src="http://static.photos/technology/200x200/3" alt="Brand 3" class="h-16 object-contain" />
-            <img src="http://static.photos/technology/200x200/4" alt="Brand 4" class="h-16 object-contain" />
-            <img src="http://static.photos/technology/200x200/5" alt="Brand 5" class="h-16 object-contain" />
-            <img src="http://static.photos/technology/200x200/6" alt="Brand 6" class="h-16 object-contain" />
-            <img src="http://static.photos/technology/200x200/7" alt="Brand 7" class="h-16 object-contain" />
-            <!-- duplicate row for smooth loop -->
-            <img src="http://static.photos/technology/200x200/1" alt="Brand 1 duplicate" class="h-16 object-contain" />
-            <img src="http://static.photos/technology/200x200/2" alt="Brand 2 duplicate" class="h-16 object-contain" />
-          </div>
-        </div>
-      </div>
+  <section class="py-10 bg-white overflow-hidden">
+  <h2 class="text-3xl font-bold text-center mb-6 text-red-500">Featured Brands</h2>
+  <div class="relative w-full overflow-hidden">
+    <div class="brand-scroll flex w-max">
+      <!-- One full set of logos -->
+      <img src="https://images.pexels.com/photos/3646555/pexels-photo-3646555.jpeg?auto=compress&cs=tinysrgb&w=400" class="h-24 mx-6 rounded shadow">
+      <img src="https://images.pexels.com/photos/3877672/pexels-photo-3877672.jpeg?auto=compress&cs=tinysrgb&w=400" class="h-24 mx-6 rounded shadow">
+      <img src="https://images.pexels.com/photos/3646553/pexels-photo-3646553.jpeg?auto=compress&cs=tinysrgb&w=400" class="h-24 mx-6 rounded shadow">
+      <img src="https://images.pexels.com/photos/3646557/pexels-photo-3646557.jpeg?auto=compress&cs=tinysrgb&w=400" class="h-24 mx-6 rounded shadow">
+      <img src="https://images.pexels.com/photos/414691/pexels-photo-414691.jpeg?auto=compress&cs=tinysrgb&w=400" class="h-24 mx-6 rounded shadow">
+
+      <!-- Duplicate the same set again for infinite loop -->
+      <img src="https://images.pexels.com/photos/3646555/pexels-photo-3646555.jpeg?auto=compress&cs=tinysrgb&w=400" class="h-24 mx-6 rounded shadow">
+      <img src="https://images.pexels.com/photos/3877672/pexels-photo-3877672.jpeg?auto=compress&cs=tinysrgb&w=400" class="h-24 mx-6 rounded shadow">
+      <img src="https://images.pexels.com/photos/3646553/pexels-photo-3646553.jpeg?auto=compress&cs=tinysrgb&w=400" class="h-24 mx-6 rounded shadow">
+      <img src="https://images.pexels.com/photos/3646557/pexels-photo-3646557.jpeg?auto=compress&cs=tinysrgb&w=400" class="h-24 mx-6 rounded shadow">
+      <img src="https://images.pexels.com/photos/414691/pexels-photo-414691.jpeg?auto=compress&cs=tinysrgb&w=400" class="h-24 mx-6 rounded shadow">
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Hot Sellers -->
   <section id="hot-sellers" class="py-12 bg-gray-50">
