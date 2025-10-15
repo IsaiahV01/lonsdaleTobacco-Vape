@@ -39,6 +39,48 @@
       animation: scroll 40s linear infinite;
     }
 
+    /* === Custom Scrollbar Styling === */
+    ::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1; /* Light gray background */
+      border-radius: 10px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: #dc2626; /* Your primary red */
+      border-radius: 10px;
+      border: 2px solid #f1f1f1; /* Adds spacing */
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: #b91c1c; /* Darker red on hover */
+    }
+    
+    /* Firefox support */
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: #dc2626 #f1f1f1;
+    }
+    body {
+      scrollbar-gutter: stable;
+    }
+    
+    ::-webkit-scrollbar {
+      transition: opacity 0.3s ease;
+    }
+    
+    body::-webkit-scrollbar-thumb {
+      opacity: 0.5;
+    }
+    
+    body:hover::-webkit-scrollbar-thumb {
+      opacity: 1;
+    }
+    
     @keyframes scroll {
       0% {
         transform: translateX(0);
